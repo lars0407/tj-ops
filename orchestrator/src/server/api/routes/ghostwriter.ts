@@ -17,9 +17,9 @@ const listMessagesQuerySchema = z.object({
   offset: z.coerce.number().int().min(0).max(10000).optional(),
 });
 
-const selectedNoteIdsSchema = z.array(z.string().trim().min(1)).default([]);
-const selectedEmailIdsSchema = z.array(z.string().trim().min(1)).default([]);
-const selectedDocumentIdsSchema = z.array(z.string().trim().min(1)).default([]);
+const selectedNoteIdsSchema = z.array(z.string().trim().min(1));
+const selectedEmailIdsSchema = z.array(z.string().trim().min(1));
+const selectedDocumentIdsSchema = z.array(z.string().trim().min(1));
 const selectedContextSchema = {
   selectedNoteIds: selectedNoteIdsSchema.optional(),
   selectedEmailIds: selectedEmailIdsSchema.optional(),
